@@ -1,0 +1,10 @@
+console.log(4+8);
+const student={
+    fullName:"John Doe",
+    age: 20,
+    grade: "A"  
+
+}      
+student["name"]="pokemane" 
+let x=prompt("what you want to say: ")
+alert("tu apni maa chuda pehle")
