@@ -6,5 +6,7 @@ const student={
 
 }      
 student["name"]="pokemane" 
-let x=prompt("what you want to say: ")
-alert("that is correct")
+// let x=prompt("what you want to say: ")
+// alert("that is correct")
+let heading=document.querySelector("h2")
+console.log(heading.textContent)
