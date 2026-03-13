@@ -7,4 +7,4 @@ const student={
 }      
 student["name"]="pokemane" 
 let x=prompt("what you want to say: ")
-alert("tu apni maa chuda pehle")
+alert("that is correct")
