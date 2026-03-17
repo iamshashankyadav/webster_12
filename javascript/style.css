@@ -26,11 +26,40 @@
     padding:0;
     text-align: center;
  }
+.choice{
+    border-radius: 20%;
+}
+.choice:hover{
+    transform: scale(1.1);
+    transition: 0.3s;
+}
 .choices{
     height: 100px;
     width: 100px;
+    display: flex; 
+    
+    align-items: center;
+    gap: 3rem;
+    margin-top: 5rem; 
+    margin-left: 32%;
+    
 }
 img{
     height: 150px;
     width: 150px;
+    border-radius: 50%;
+}
+.scoreb{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5rem;
+}
+.heading{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
 }
