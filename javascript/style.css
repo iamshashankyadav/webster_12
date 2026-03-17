@@ -55,6 +55,7 @@ img{
     align-items: center;
     justify-content: center;
     margin-top: 5rem;
+    font-size: 40px;
 }
 .heading{
     display: flex;
