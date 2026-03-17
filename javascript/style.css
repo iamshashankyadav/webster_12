@@ -51,7 +51,7 @@ img{
 }
 .scoreb{
     display: flex;
-    flex-direction: column;
+    gap:10rem;
     align-items: center;
     justify-content: center;
     margin-top: 5rem;
@@ -62,4 +62,17 @@ img{
     align-items: center;
     justify-content: center;
     height: 100px;
+}
+.score{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5rem;
+    size: 110px;
+    color: beige;
+    
+}
+body{
+    background-color: rgb(67, 64, 61);
 }
