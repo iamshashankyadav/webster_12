@@ -1,5 +1,6 @@
 let userScore=0;
 let computerScore=0;
+let drawScore=0;
 const choices=document.querySelectorAll(".choice");
 function getComputerChoice(){
     const choices=["rock","papper","scissor"];
@@ -31,6 +32,10 @@ function updateScore(winner){
         computerScore++;
         document.querySelector("#computer-score").textContent=computerScore;
     }
+    else{
+        drawScore++;
+        document.querySelector("#draw-score").textContent=drawScore;
+    }
 }
 
 
@@ -45,6 +50,7 @@ choices.forEach(choice=>{
         const computerChoice=getComputerChoice();
         console.log("computer choice: "+computerChoice);
         const winner=determineWinner(userChoice,computerChoice);
+        console.log("winner: "+winner);
         updateScore(winner);
     }
 )
