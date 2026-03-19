@@ -18,3 +18,17 @@ body{
     min-height: 45vh;
     width: 40vh;
 }
+form{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+form select, button input{
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    border: none;
+    outline: none;
+ }
