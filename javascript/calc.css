@@ -27,8 +27,37 @@ form select, button input{
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 0.75rem;
     width: 100%;
     border: none;
     outline: none;
+    
  }
+form input{
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    height: 3rem;
+    border-radius: 1rem;
+}
+.dropdown{
+    display: flex;
+    justify-content: space-between;
+    gap: 70px;
+}
+.select-container{
+    /* max-width: 60%; */
+}
+form button{
+    padding: 10px;
+    background-color: #9a2740;
+    color: #fff;
+    border: none;
+    border-radius: 0.75rem;
+    cursor: pointer;
+}
+form button:hover{
+    background-color: #7a1f30;
+}
+form button:active{
+    background-color: #5a141f;
+}
