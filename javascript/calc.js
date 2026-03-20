@@ -5,10 +5,14 @@ const dropdowns = document.querySelectorAll(".dropdown select");
 const btn = document.querySelector("form button");
 const fromCurr = document.querySelector(".from select");
 const toCurr = document.querySelector(".to select");
-const msg = document.querySelector(".msg");
+const msg = document.querySelector(".msg") || document.querySelector(".MSG");
+
+if (!msg) {
+  console.warn("[calc.js] .msg element not found; output messages will not be shown.");
+}
 
 for (let select of dropdowns) {
-  for (currCode in countryList) {
+  for (let currCode in countryList) {
     let newOption = document.createElement("option");
     newOption.innerText = currCode;
     newOption.value = currCode;
@@ -25,6 +29,14 @@ for (let select of dropdowns) {
   });
 }
 
+const setMessage = (text) => {
+  if (msg) {
+    msg.innerText = text;
+  } else {
+    console.log(text);
+  }
+};
+
 const updateExchangeRate = async () => {
   let amount = document.querySelector(".amount input");
   let amtVal = amount.value;
@@ -32,13 +44,35 @@ const updateExchangeRate = async () => {
     amtVal = 1;
     amount.value = "1";
   }
-  const URL = `${BASE_URL}/${fromCurr.value.toLowerCase()}/${toCurr.value.toLowerCase()}.json`;
-  let response = await fetch(URL);
-  let data = await response.json();
-  let rate = data[toCurr.value.toLowerCase()];
 
-  let finalAmount = amtVal * rate;
-  msg.innerText = `${amtVal} ${fromCurr.value} = ${finalAmount} ${toCurr.value}`;
+  if (fromCurr.value === toCurr.value) {
+    let finalAmount = amtVal;
+    setMessage(`${amtVal} ${fromCurr.value} = ${finalAmount} ${toCurr.value}`);
+    return;
+  }
+
+  const URL = `${BASE_URL}/${fromCurr.value.toLowerCase()}/${toCurr.value.toLowerCase()}.json`;
+
+  try {
+    let response = await fetch(URL);
+    if (!response.ok) {
+      setMessage(`Failed to fetch rate for ${fromCurr.value} to ${toCurr.value}: ${response.status}`);
+      return;
+    }
+
+    let data = await response.json();
+    let rate = data[toCurr.value.toLowerCase()];
+
+    if (typeof rate !== "number") {
+      setMessage(`Unexpected API response for ${fromCurr.value} to ${toCurr.value}`);
+      return;
+    }
+
+    let finalAmount = amtVal * rate;
+    setMessage(`${amtVal} ${fromCurr.value} = ${finalAmount} ${toCurr.value}`);
+  } catch (error) {
+    setMessage(`Cannot update rate: ${error.message}`);
+  }
 };
 
 const updateFlag = (element) => {
