@@ -44,9 +44,7 @@ form input{
     justify-content: space-between;
     gap: 70px;
 }
-.select-container{
-    /* max-width: 60%; */
-}
+
 form button{
     padding: 10px;
     background-color: #9a2740;
@@ -61,3 +59,4 @@ form button:hover{
 form button:active{
     background-color: #5a141f;
 }
+
