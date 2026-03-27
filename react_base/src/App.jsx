@@ -16,14 +16,14 @@ function App() {
           <img src={viteLogo} className="vite" alt="Vite logo" />
         </div>
         <div>
-          <h1>Get started</h1>
+          <h1>Get finished</h1>
           <p>
             Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
           </p>
         </div>
         <button
           className="counter"
-          onClick={() => setCount((count) => count + 1)}
+          onClick={() => setCount((count) => count + -11)}
         >
           Count is {count}
         </button>
@@ -57,7 +57,7 @@ function App() {
           <svg className="icon" role="presentation" aria-hidden="true">
             <use href="/icons.svg#social-icon"></use>
           </svg>
-          <h2>Connect with us</h2>
+          <h2>Connect with us just joking this is the test  return for jsx xml </h2>
           <p>Join the Vite community</p>
           <ul>
             <li>
