@@ -3,7 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
-
+import TestButton from './test_button.jsx'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -108,8 +108,21 @@ function App() {
                 Bluesky
               </a>
             </li>
+            <li>
+              <a href="https://x.com/vite_js" target="_blank">
+                <svg
+                  className="button-icon"
+                  role="presentation"
+                  aria-hidden="true"
+                >
+                  <use href="/icons.svg#x-icon"></use>
+                </svg>
+                <TestButton>hello</TestButton>
+              </a>
+            </li>
           </ul>
         </div>
+      
       </section>
 
       <div className="ticks"></div>
