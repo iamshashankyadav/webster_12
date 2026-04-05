@@ -2,10 +2,14 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+ 
+  color: rgb(28, 34, 32);
 }
 
 .button {
   width: 45px;
   height: 45px;
   margin: 3px;
+    font-size: 18px;
+  
 }

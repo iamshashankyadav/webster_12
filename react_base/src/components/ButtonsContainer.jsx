@@ -1,5 +1,5 @@
 import styles from "./ButtonsContainer.module.css";
-
+import "bootstrap/dist/css/bootstrap.min.css";
 const ButtonsContainer = ({ onButtonClick }) => {
   const buttonNames = [
     "C",
@@ -24,8 +24,8 @@ const ButtonsContainer = ({ onButtonClick }) => {
   return (
     <div className={styles.buttonsContainer}>
       {buttonNames.map((buttonName) => (
-        <button
-          className={styles.button}
+        <button  type="button"
+          className={`${styles.button} btn btn-primary`}
           onClick={() => onButtonClick(buttonName)}
         >
           {buttonName}
